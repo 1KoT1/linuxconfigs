@@ -5,7 +5,6 @@ set shiftwidth=2
 call plug#begin()
 	Plug 'ilyachur/cmake4vim'
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
-	Plug 'alepez/vim-gtest'
 	Plug 'puremourning/vimspector'
 call plug#end()
 
