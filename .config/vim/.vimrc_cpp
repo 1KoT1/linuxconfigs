@@ -1,0 +1,41 @@
+" Отступы
+set tabstop=2
+set shiftwidth=2
+
+call plug#begin()
+	Plug 'ilyachur/cmake4vim'
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
+	Plug 'alepez/vim-gtest'
+	Plug 'puremourning/vimspector'
+call plug#end()
+
+" Включаю создание файл compile_commands.json с помощью cmake вызванного из
+" плагина cmake4vim
+let g:cmake_compile_commands = 1
+
+" Enable a support of Vimspector in cmake4vim
+let g:cmake_vimspector_support = 1
+
+let g:cmake_ctest_args = '--output-on-failure'
+
+function Test()
+	wa
+
+	let l:build_dir = utils#cmake#findBuildDir()
+	if l:build_dir ==# ''
+		call utils#common#Warning('CMake project was not found!')
+		return
+	endif
+
+	let l:build_cmd = cmake4vim#SelectTarget(g:cmake_build_target)
+	let l:ctest_cmd = 'ctest ' . g:cmake_ctest_args
+	call utils#common#executeCommands([{'cmd': l:build_cmd, 'cwd': getcwd(), 'errFormat': ''},{'cmd': l:ctest_cmd, 'cwd': l:build_dir, 'errFormat': ''}], 1)
+endfunction
+
+command Test :call Test()
+
+map <F2> :YcmCompleter GoTo<CR>
+map qf :YcmCompleter FixIt<CR>
+
+" Enable keys preset HUMAN in Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
