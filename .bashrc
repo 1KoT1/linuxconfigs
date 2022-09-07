@@ -10,16 +10,16 @@ esac
 
 umask 0022
 
-# Enable vi mode.
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# Enable the vi mode.
 set -o vi
 
 # Map ESC to CapsLock.
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "keycode 66 = Escape NoSymbol Escape"
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -125,10 +125,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 alias gl='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph --all'
 alias glog='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph'
-alias gdt="git difftool -y && git status"
+alias gdt='git difftool -y && git status'
+
+alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
 
 # Config for ep5 build
 export EP5B_CONFIG_FILE=~/.config/ep5build/config
