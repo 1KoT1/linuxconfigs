@@ -17,9 +17,8 @@ HISTCONTROL=ignoreboth
 # Enable the vi mode.
 set -o vi
 
-# Map ESC to CapsLock.
-xmodmap -e "remove Lock = Caps_Lock"
-xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+# Map escape to capslog.
+setxkbmap -option caps:escape
 
 # append to the history file, don't overwrite it
 shopt -s histappend
