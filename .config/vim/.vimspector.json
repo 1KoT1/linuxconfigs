@@ -1,19 +1,33 @@
 {
-    "configurations": {
-        "CPP: Run current script": {
-            "adapter": "vscode-cpptools",
-            "configuration": {
-                "justMyCode#json": "${justMyCode:true}",
-                "program": "cmake-build-Debug/status_sender_unittests",
-                "request": "launch",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "ignoreFailures": true,
-                        "text": "-enable-pretty-printing"
-                    }
-                ]
-            }
-        }
-    }
+	"configurations": {
+		"CPP: Run current script": {
+			"adapter": "vscode-cpptools",
+				"configuration": {
+					"program": "cmake-build-Debug/tvm_offline_unittests",
+					"request": "launch",
+					"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"ignoreFailures": true,
+						"text": "-enable-pretty-printing"
+					}
+					]
+				}
+		},
+			"GTest debug one test": {
+				"adapter": "vscode-cpptools",
+				"configuration": {
+					"program": "cmake-build-Debug/tvm_offline_unittests",
+					"args": [ "--gtest_filter=${TestName}" ],
+					"request": "launch",
+					"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"ignoreFailures": true,
+						"text": "-enable-pretty-printing"
+					}
+					]
+				}
+			}
+	}
 }
