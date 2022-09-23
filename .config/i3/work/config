@@ -9,6 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Hide the mouse cursor when typing on a keyboard. Show the mouse cursor when move a mouse.
+exec --no-startup-id xbanish
+
 set $mod Mod4
 #set $sup Mod4
 
