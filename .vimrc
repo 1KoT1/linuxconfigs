@@ -68,6 +68,16 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[2 q"
 let &t_EI = "\<Esc>[2 q"
 
+call plug#begin()
+
+	Plug 'lyokha/vim-xkbswitch'
+	" You should build and install https://github.com/grwlf/xkb-switch
+	
+call plug#end()
+
+" Включаю удобную переключалку раскладки клавиатуры.
+let g:XkbSwitchEnabled = 1
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.
