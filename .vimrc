@@ -32,11 +32,6 @@ highlight DiffChange  cterm=bold ctermbg=43
 highlight DiffDelete  cterm=bold ctermbg=43
 "highlight DiffText    cterm=bold ctermbg=43
 
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
-
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -72,6 +67,16 @@ autocmd filetype c,cpp vmap uc :norm d2l<CR>
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[2 q"
 let &t_EI = "\<Esc>[2 q"
+
+call plug#begin()
+
+	Plug 'lyokha/vim-xkbswitch'
+	" You should build and install https://github.com/grwlf/xkb-switch
+	
+call plug#end()
+
+" Включаю удобную переключалку раскладки клавиатуры.
+let g:XkbSwitchEnabled = 1
 
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
