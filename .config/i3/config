@@ -66,6 +66,9 @@ bindsym $mod+Ctrl+k exec --no-startup-id keepass2
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# doesn't warp the mouse cursor to the window's center when change a focus to this windows
+mouse_warping none
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
