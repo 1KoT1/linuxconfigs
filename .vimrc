@@ -75,6 +75,23 @@ call plug#begin()
 	
 call plug#end()
 
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=ru_yo,en_us
+autocmd FileType gitcommit setlocal spell spelllang=ru_yo,en_us
+" Вкл/выкл проверку орфографии:
+" :set spell/spell!
+" ]s - Следующее слово с ошибкой;
+" [s - Предыдущее слово с ошибкой;
+" ]S - (Обратите внимание на заглавную букву «S») — похоже на «] s», найти, но
+" останавливаться только на плохих словах, а не на редкие слова или слова для
+" другого региона.
+" [S - по аналогии с «[s», но поиск в обратном направлении.
+" z= - отобразить список замен;
+" zg - Добавить в словарь;
+" zw - Убрать из словаря;
+" zG - Игнорировать слово;
+
+
 " Включаю удобную переключалку раскладки клавиатуры.
 let g:XkbSwitchEnabled = 1
 
