@@ -39,5 +39,8 @@ map qf :YcmCompleter FixIt<CR>
 " Enable keys preset HUMAN in Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+
 " The hack for fix the clangd bug -- fail to find stl files in /usr/include/c++/11/
 let g:ycm_clangd_args = [ '--query-driver=/usr/bin/c++' ]
