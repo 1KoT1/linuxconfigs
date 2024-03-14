@@ -130,5 +130,3 @@ alias gdt='git difftool -y && git status'
 
 alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
 
-# Config for ep5 build
-export EP5B_CONFIG_FILE=~/.config/ep5build/config
