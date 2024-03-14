@@ -8,9 +8,17 @@ case $- in
       *) return;;
 esac
 
+umask 0022
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+
+# Enable the vi mode.
+set -o vi
+
+# Map escape to capslog.
+setxkbmap -option caps:escape
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -115,3 +123,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias gl='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph --all'
+alias glog='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph'
+alias gdt='git difftool -y && git status'
+
+alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
+
+# Config for ep5 build
+export EP5B_CONFIG_FILE=~/.config/ep5build/config
