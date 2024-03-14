@@ -130,9 +130,6 @@ alias gdt='git difftool -y && git status'
 
 alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
 
-# Config for ep5 build
-export EP5B_CONFIG_FILE=~/.config/ep5build/config
-
 
 # Config Vault. Read https://confluence.trassir.com/pages/viewpage.action?pageId=164430770
 export VAULT_ADDR=https://vault.trassir.com:8200
