@@ -9,6 +9,8 @@ set hlsearch
 
 set incsearch
 
+let mapleader = ","
+
 if has("syntax")
   syntax on
 endif
