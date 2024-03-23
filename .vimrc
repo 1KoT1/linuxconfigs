@@ -75,6 +75,8 @@ call plug#begin()
 	Plug 'lyokha/vim-xkbswitch'
 	" You should build and install https://github.com/grwlf/xkb-switch
 	
+	Plug 'ycm-core/YouCompleteMe'
+
 call plug#end()
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
