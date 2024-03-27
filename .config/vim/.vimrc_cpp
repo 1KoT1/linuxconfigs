@@ -6,6 +6,7 @@ call plug#begin()
 	Plug 'ilyachur/cmake4vim'
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
 	Plug 'puremourning/vimspector'
+	Plug 'tpope/vim-dispatch'
 call plug#end()
 
 " Включаю создание файл compile_commands.json с помощью cmake вызванного из
@@ -45,3 +46,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
 " Auto close annoying windows on complete
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" YCM Symbol Search
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
