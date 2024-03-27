@@ -232,3 +232,8 @@ for_window [class="plasmashell" window_type="notification"] border none, move po
 no_focus [class="plasmashell" window_type="notification"]
 # Kill Plasma desctop window
 for_window [title="Рабочий стол @ QRect.*"] kill; floating enable; border none
+
+
+
+# Trassir compatibility improvements
+for_window [class="t1server-core2d"] floating enable
