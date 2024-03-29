@@ -103,6 +103,9 @@ let g:XkbSwitchEnabled = 1
 
 autocmd filetype python map <F2> :YcmCompleter GoTo<CR>
 
+" Auto close annoying windows on complete
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.
