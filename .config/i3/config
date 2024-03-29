@@ -58,7 +58,7 @@ bindsym $mod+Return exec konsole --hide-menubar
 # Applications hotkeys.
 bindsym $mod+Ctrl+b exec --no-startup-id firefox
 bindsym $mod+Ctrl+q exec --no-startup-id qtcreator
-bindsym $mod+Ctrl+k exec --no-startup-id keepass2
+bindsym $mod+Ctrl+k exec --no-startup-id keepassxc
 bindsym $sup+Ctrl+s exec --no-startup-id /usr/games/steam
 
 # kill focused window
