@@ -53,3 +53,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " YCM Symbol Search
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+
+" Show doc in hover
+nmap <leader>D <plug>(YCMHover)
