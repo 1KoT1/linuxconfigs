@@ -102,6 +102,7 @@ let g:XkbSwitchEnabled = 1
 
 
 autocmd filetype python map <F2> :YcmCompleter GoTo<CR>
+autocmd filetype python nmap <leader>D <plug>(YCMHover)
 
 " Auto close annoying windows on complete
 let g:ycm_autoclose_preview_window_after_completion = 1
