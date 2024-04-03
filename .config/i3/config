@@ -236,3 +236,4 @@ for_window [title="Рабочий стол @ QRect.*"] kill; floating enable; bo
 
 # Trassir compatibility improvements
 for_window [class="t1server-core2d"] floating enable
+for_window [class="t1client-core2d"] floating enable
