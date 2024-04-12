@@ -15,6 +15,9 @@ if has("syntax")
   syntax on
 endif
 
+" Всегда показывать строку состояния
+let laststatus = 2
+
 " Схема цветов для vimdiff
 "   Префикс ctrem для консоли, префикс gui для графики
 "   cterm - sets the style
