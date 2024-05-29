@@ -133,3 +133,8 @@ alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt 
 
 # Config Vault. Read https://confluence.trassir.com/pages/viewpage.action?pageId=164430770
 export VAULT_ADDR=https://vault.trassir.com:8200
+
+# Configure path to docker socket for rootles by default. For apps can found the docker socket.
+# See '$ docker context ls' for details
+# See https://docs.docker.com/engine/security/rootless/#client for details
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
