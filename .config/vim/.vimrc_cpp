@@ -76,3 +76,15 @@ set foldmethod=syntax
 
 " Enable highlighting by YCM
 let g:ycm_enable_semantic_highlighting=1
+
+
+highlight CppParameter        cterm=bold ctermfg=15
+highlight CppFunction         cterm=bold ctermfg=39
+highlight CppProperty         cterm=bold ctermfg=51
+"highlight CppPropertyPrivate  cterm=italic ctermfg=51
+
+call prop_type_add( 'YCM_HL_parameter',         { 'highlight': 'CppParameter' } )
+call prop_type_add( 'YCM_HL_function',          { 'highlight': 'CppFunction' } )
+call prop_type_add( 'YCM_HL_method',            { 'highlight': 'CppFunction' } )
+call prop_type_add( 'YCM_HL_property',          { 'highlight': 'CppProperty' } )
+"call prop_type_add( 'YCM_HL_private_property',  { 'highlight': 'CppPropertyPrivate' } )
