@@ -110,6 +110,11 @@ autocmd filetype python nmap <leader>D <plug>(YCMHover)
 " Auto close annoying windows on complete
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+" Режим автодополнения команд
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.
