@@ -99,6 +99,22 @@ autocmd FileType gitcommit setlocal spell spelllang=ru_yo,en_us
 " zw - Убрать из словаря;
 " zG - Игнорировать слово;
 
+" Включаю поддержку волнистого подчёркивания (undercurl)
+let &t_Cs = "\e[4:3m"
+
+highlight clear SpellBad
+highlight SpellBad term=reverse cterm=undercurl ctermul=Red gui=undercurl guisp=Red
+highlight clear SpellCap
+highlight SpellCap term=reverse cterm=undercurl ctermul=Blue gui=undercurl guisp=Blue
+highlight clear SpellRare
+highlight SpellRare term=reverse cterm=undercurl ctermul=Magenta gui=undercurl guisp=Magenta
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=undercurl ctermul=Cyan gui=undercurl guisp=Cyan
+
+
+
+
+
 
 " Включаю удобную переключалку раскладки клавиатуры.
 let g:XkbSwitchEnabled = 1
