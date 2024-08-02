@@ -32,10 +32,11 @@ let laststatus = 2
 "   DiffText - the exact part of the line that changed
 "   Выбрать цвета для кронсоли: https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim?file=Xterm-color-table.png
 "   Для gui обычная RGB нотация, к примеру #ff8080
-highlight DiffAdd     cterm=bold ctermbg=43
-highlight DiffChange  cterm=bold ctermbg=43
-highlight DiffDelete  cterm=bold ctermbg=43
-"highlight DiffText    cterm=bold ctermbg=43
+highlight DiffAdd     ctermbg=22
+highlight DiffChange  ctermbg=22
+highlight DiffDelete  ctermbg=22
+highlight clear DiffText
+highlight DiffText    ctermbg=52
 
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
