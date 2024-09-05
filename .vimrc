@@ -80,7 +80,7 @@ call plug#begin()
 	" You should build and install https://github.com/grwlf/xkb-switch
 	
 	Plug 'ycm-core/YouCompleteMe'
-
+	Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
