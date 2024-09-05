@@ -7,7 +7,6 @@ call plug#begin()
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
 	Plug 'puremourning/vimspector'
 	Plug 'tpope/vim-dispatch'
-	Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 " Включаю создание файл compile_commands.json с помощью cmake вызванного из
