@@ -81,6 +81,7 @@ call plug#begin()
 	
 	Plug 'ycm-core/YouCompleteMe'
 	Plug 'skywind3000/asyncrun.vim'
+	Plug 'will133/vim-dirdiff'
 call plug#end()
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
