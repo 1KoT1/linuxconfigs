@@ -133,6 +133,23 @@ set wildmenu
 set wildmode=longest:full,full
 set wildoptions=pum
 
+" В терминале режим команд по F1
+set termwinkey=<F1>
+" Размер истории терминала в строках
+set termwinscroll=100000
+
+def g:Tapi_lcd(_, path: string)
+	if isdirectory(path)
+		execute 'silent lcd ' .. fnameescape(path)
+	endif
+enddef
+def g:ReopenTerm()
+	terminal
+	only!
+enddef
+tmap <C-k> <F1>:call g:ReopenTerm()<CR>
+
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.

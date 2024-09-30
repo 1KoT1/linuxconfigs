@@ -54,6 +54,7 @@ focus_follows_mouse no
 # bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec urxvt
 bindsym $mod+Return exec konsole --hide-menubar
+bindsym $mod+Ctrl+Return exec konsole --hide-menubar --profile vim -e vim -c "terminal ++curwin" -c "set noshowmode" -c "set noruler" -c "set laststatus=0" -c "set noshowcmd"
 
 # Applications hotkeys.
 bindsym $mod+Ctrl+b exec --no-startup-id chromium

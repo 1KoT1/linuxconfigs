@@ -138,3 +138,11 @@ export VAULT_ADDR=https://vault.trassir.com:8200
 # See '$ docker context ls' for details
 # See https://docs.docker.com/engine/security/rootless/#client for details
 export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/docker.sock"
+
+# A helper for sync the current directory in the vim terminal.
+if [[ -n "$VIM_TERMINAL" ]]; then
+    PROMPT_COMMAND='_vim_sync_PWD'
+    function _vim_sync_PWD() {
+      printf '\033]51;["call", "Tapi_lcd", "%q"]\007' "$PWD"
+    }
+fi
