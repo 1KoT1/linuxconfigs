@@ -143,11 +143,6 @@ def g:Tapi_lcd(_, path: string)
 		execute 'silent lcd ' .. fnameescape(path)
 	endif
 enddef
-def g:ReopenTerm()
-	terminal
-	only!
-enddef
-tmap <C-k> <F1>:call g:ReopenTerm()<CR>
 
 
 " Подключать .vimrc и каталога в которм запущен vim.
