@@ -3,8 +3,8 @@ set tabstop=2
 set shiftwidth=2
 
 call plug#begin()
-	" Plug 'ilyachur/cmake4vim'
-	Plug 'https://github.com/cdelledonne/vim-cmake.git'
+	Plug 'ilyachur/cmake4vim'
+	" Plug 'https://github.com/cdelledonne/vim-cmake.git'
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
 	Plug 'puremourning/vimspector'
 	Plug 'tpope/vim-dispatch'
