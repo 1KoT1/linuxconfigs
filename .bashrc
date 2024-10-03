@@ -145,4 +145,9 @@ if [[ -n "$VIM_TERMINAL" ]]; then
     function _vim_sync_PWD() {
       printf '\033]51;["call", "Tapi_lcd", "%q"]\007' "$PWD"
     }
+		alias vim="konsole-exec-in-new-tab.sh vim"
+		alias vimdiff="konsole-exec-in-new-tab.sh vimdiff"
+		export VISUAL="konsole-exec-in-new-tab.sh vim"
+		export EDITOR="$VISUAL"
+		export GIT_EDITOR="$VISUAL"
 fi
