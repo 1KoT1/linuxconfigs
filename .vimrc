@@ -138,6 +138,15 @@ set termwinkey=<F1>
 " Размер истории терминала в строках
 set termwinscroll=100000
 
+" Очистить историю терминала путем его переоткрытия
+def g:Reopen_term()
+	new
+	call term_sendkeys(0, "exit\n")
+	terminal
+	only!
+enddef
+tmap <c-k> <c-F1>:call g:Reopen_term()<CR>
+
 def g:Tapi_lcd(_, path: string)
 	if isdirectory(path)
 		execute 'silent lcd ' .. fnameescape(path)
