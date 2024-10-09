@@ -154,6 +154,11 @@ def g:Tapi_lcd(_, path: string)
 enddef
 
 
+" automatically open quickfix window when AsyncRun command is executed
+" set the quickfix window 20 lines height.
+let g:asyncrun_open = 20
+
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.
