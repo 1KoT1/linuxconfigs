@@ -158,6 +158,9 @@ enddef
 " set the quickfix window 20 lines height.
 let g:asyncrun_open = 20
 
+" Открывать новые окна при комаде split и vsplit внизу и справа.
+set splitbelow
+set splitright
 
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
