@@ -138,6 +138,9 @@ set termwinkey=<F1>
 " Размер истории терминала в строках
 set termwinscroll=100000
 
+
+
+
 " Очистить историю терминала путем его переоткрытия
 def g:Reopen_term()
 	new
@@ -152,6 +155,12 @@ def g:Tapi_lcd(_, path: string)
 		execute 'silent lcd ' .. fnameescape(path)
 	endif
 enddef
+
+" Отключаю перенос строк в терминале
+au TerminalWinOpen * setlocal nowrap
+
+
+
 
 
 " automatically open quickfix window when AsyncRun command is executed
