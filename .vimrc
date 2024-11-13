@@ -100,6 +100,7 @@ autocmd FileType gitcommit setlocal spell spelllang=ru_yo,en_us
 " zg - Добавить в словарь;
 " zw - Убрать из словаря;
 " zG - Игнорировать слово;
+command SP set spell spelllang=ru_yo,en_us
 
 " Включаю поддержку волнистого подчёркивания (undercurl)
 let &t_Cs = "\e[4:3m"
