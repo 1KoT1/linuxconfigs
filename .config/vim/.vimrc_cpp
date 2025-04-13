@@ -38,6 +38,8 @@ command Test :call Test()
 
 map <F2> :YcmCompleter GoTo<CR>
 map qf :YcmCompleter FixIt<CR>
+nmap <leader>y :YcmCompleter 
+nmap <leader>yg :YcmCompleter GoTo
 
 " Enable keys preset HUMAN in Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
