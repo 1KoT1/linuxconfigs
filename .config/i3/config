@@ -58,9 +58,7 @@ bindsym $mod+Ctrl+Return exec konsole --hide-menubar --profile vim -e vim -c "te
 
 # Applications hotkeys.
 bindsym $mod+Ctrl+b exec --no-startup-id chromium
-bindsym $mod+Ctrl+q exec --no-startup-id qtcreator
 bindsym $mod+Ctrl+k exec --no-startup-id keepassxc
-bindsym $sup+Ctrl+s exec --no-startup-id /usr/games/steam
 
 # kill focused window
 bindsym $mod+Shift+q kill
