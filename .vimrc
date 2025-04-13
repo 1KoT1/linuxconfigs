@@ -172,6 +172,9 @@ let g:asyncrun_open = 20
 set splitbelow
 set splitright
 
+" Копировать сразу в системный буфер
+set clipboard=unnamedplus
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.
