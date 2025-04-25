@@ -57,6 +57,7 @@ autocmd filetype c,cpp set cinoptions=>s,:0,l1,g0,(0,Ws
 autocmd filetype c,cpp vmap cc :norm i//<CR>
 autocmd filetype c,cpp vmap uc :norm d2l<CR>
 
+nmap ,f :AsyncRun git grep -n 
 
 
 
