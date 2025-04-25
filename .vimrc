@@ -87,6 +87,8 @@ call plug#end()
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=ru_yo,en_us
+autocmd BufRead,BufNewFile *.cpp setlocal spell spelllang=ru_yo,en_us
+autocmd BufRead,BufNewFile *.h setlocal spell spelllang=ru_yo,en_us
 autocmd BufRead,BufNewFile CMakeLists.txt setlocal spell!
 autocmd FileType gitcommit setlocal spell spelllang=ru_yo,en_us
 " Вкл/выкл проверку орфографии:
