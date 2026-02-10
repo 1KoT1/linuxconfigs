@@ -132,9 +132,6 @@ alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt 
 
 alias kwalletcli='kwalletcli 2>/dev/null'
 
-alias tool="docker compose -f /home/pochkaenko/dssl/src/trassir/.vim-proj/toolchain-container.yaml run --rm"
-alias tooldebug="tool -p 12345:12345 --name trassir-debian trassir-debian"
-
 
 # Config Vault. Read https://confluence.trassir.com/pages/viewpage.action?pageId=164430770
 export VAULT_ADDR=https://vault.trassir.com:8200
