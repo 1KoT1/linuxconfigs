@@ -178,6 +178,10 @@ set splitright
 " Копировать сразу в системный буфер
 set clipboard=unnamedplus
 
+
+" Предпросмотр для markdown (*.md)
+autocmd FileType markdown command Preview vertical terminal ++close ++kill=term bash -c "echo % | entr -cs 'glow %'"
+
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
 " которой вы его запустите.
