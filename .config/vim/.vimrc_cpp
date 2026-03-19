@@ -9,6 +9,7 @@ call plug#begin()
 	Plug 'puremourning/vimspector'
 	Plug 'tpope/vim-dispatch'
 	Plug 'skywind3000/asyncrun.vim'
+	Plug 'will133/vim-dirdiff'
 call plug#end()
 
 " Включаю создание файл compile_commands.json с помощью cmake вызванного из
