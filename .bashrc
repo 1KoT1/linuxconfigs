@@ -15,9 +15,6 @@ HISTCONTROL=ignoreboth
 # Enable the vi mode.
 set -o vi
 
-# Map escape to capslog.
-setxkbmap -option caps:escape
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
