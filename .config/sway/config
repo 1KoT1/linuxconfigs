@@ -215,3 +215,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bar {
+    swaybar_command swaybar
+    # Use swayrbar as status command with some logging output which
+    # is redirected to /tmp/swayrbar.log.  Be sure to only redirect
+    # stderr because the swaybar protocol requires the status_command
+    # to emit JSON to stdout which swaybar reads.
+    status_command i3blocks
+    position bottom
+    font pango:Iosevka 20
+    height 30
+
+    colors {
+        statusline #f8c500
+        background #33333390
+    }
+}
