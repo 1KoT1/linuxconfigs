@@ -59,7 +59,7 @@ focus_follows_mouse no
 bindsym $mod+Return exec konsole --hide-menubar
 
 # Applications hotkeys.
-bindsym $mod+Ctrl+b exec --no-startup-id firefox
+bindsym $mod+Ctrl+b exec --no-startup-id chromium
 bindsym $mod+Ctrl+q exec --no-startup-id qtcreator
 bindsym $mod+Ctrl+k exec --no-startup-id keepass2
 
