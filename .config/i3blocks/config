@@ -29,10 +29,14 @@ separator_block_width=15
 markup=none
 
 # Volume indicator
-[my-volume]
+[volume-indicator]
 command=pactl get-sink-mute @DEFAULT_SINK@ | sed -e 's\Mute: да\🔇\' -e 's\Mute: нет\🔊\'
 interval=once
-signal=10
+signal=1
+
+[volume-config]
+full_text=↑
+command=swaymsg -q exec pavucontrol-qt
 
 # Network interface monitoring
 #
