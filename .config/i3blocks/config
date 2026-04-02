@@ -30,7 +30,7 @@ markup=none
 
 # Volume indicator
 [volume-indicator]
-command=pactl get-sink-mute @DEFAULT_SINK@ | sed -e 's\Mute: да\🔇\' -e 's\Mute: нет\🔊\'
+command=/home/vasilii/.config/i3blocks/sripts/volume-indicator.sh
 interval=once
 signal=1
 
