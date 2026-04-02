@@ -72,6 +72,8 @@ call plug#begin()
 
 	Plug 'lyokha/vim-xkbswitch'
 	" You should build and install https://github.com/grwlf/xkb-switch
+
+	Plug 'jasonccox/vim-wayland-clipboard'
 	
 call plug#end()
 
