@@ -9,6 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+include /etc/sway/config.d/*
+
 # Hide the mouse cursor when typing on a keyboard. Show the mouse cursor when move a mouse.
 #TODO: exec --no-startup-id xbanish
 
