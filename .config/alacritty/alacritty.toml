@@ -3,3 +3,9 @@ size = 16.0
 
 [window]
 opacity = 0.9
+
+[keyboard]
+bindings = [
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "K", mods = "Control", action = "ClearHistory" },
+]
