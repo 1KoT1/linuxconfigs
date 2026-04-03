@@ -43,22 +43,19 @@ command=swaymsg -q exec pavucontrol-qt
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-label=Q
 #instance=wlan0
 color=#00FF00
 interval=10
 separator=false
 
 [wifi]
-label=A
 #instance=wlp3s0
 interval=10
 separator=false
 
-[bandwidth]
-label=Z
-#instance=eth0
-interval=5
+#[bandwidth]
+##instance=eth0
+#interval=5
 
 # Date Time
 #
