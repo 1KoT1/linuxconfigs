@@ -53,6 +53,10 @@ separator=false
 interval=10
 separator=false
 
+[network-manager-config]
+full_text=↑
+command=swaymsg -q "exec alacritty --class network-manager-config --option window.dimensions.columns=120 --option window.dimensions.lines=30 --command nmtui"
+
 #[bandwidth]
 ##instance=eth0
 #interval=5
