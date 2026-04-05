@@ -26,8 +26,15 @@ font pango:monospace 5
 #font pango:DejaVu Sans Mono 8
 
 # Hide window titles.
-#default_border pixel 4
-#default_floating_border pixel 1
+default_border pixel 4
+default_floating_border pixel 1
+
+set $completely_transparent #FFFFFF00
+set $opacity A0
+client.unfocused $completely_transparent $completely_transparent $completely_transparent
+client.focused #3333BB$opacity #3333BB$opacity #FFFFFF
+client.focused_inactive $completely_transparent $completely_transparent $completely_transparent
+hide_edge_borders --i3 both
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -234,7 +241,7 @@ bar {
 
     colors {
         statusline #f8c500
-        background #33333390
+        background $completely_transparent
     }
 }
 
