@@ -4,8 +4,12 @@ set shiftwidth=2
 
 call plug#begin()
 	Plug 'ilyachur/cmake4vim'
+	" Plug 'https://github.com/cdelledonne/vim-cmake.git'
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
 	Plug 'puremourning/vimspector'
+	Plug 'tpope/vim-dispatch'
+	Plug 'skywind3000/asyncrun.vim'
+	Plug 'will133/vim-dirdiff'
 call plug#end()
 
 " Включаю создание файл compile_commands.json с помощью cmake вызванного из
@@ -35,6 +39,59 @@ command Test :call Test()
 
 map <F2> :YcmCompleter GoTo<CR>
 map qf :YcmCompleter FixIt<CR>
+nmap <leader>y :YcmCompleter 
+nmap <leader>yg :YcmCompleter GoTo
 
 " Enable keys preset HUMAN in Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
+nmap <Leader>B <Plug>VimspectorBreakpoints
+
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+
+"" The hack for fix the clangd bug -- fail to find stl files in /usr/include/c++/11/
+"let g:ycm_clangd_args = [ '--query-driver=/usr/bin/c++' ]
+
+" Auto close annoying windows on complete
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" YCM Symbol Search
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+
+" Show doc in hover
+nmap <leader>D <plug>(YCMHover)
+
+
+
+" Сворачивание блоков
+" zc - свернуть блок
+" zo - развернуть блок
+" zM - закрыть все блоки
+" zR - открыть все блоки
+" za - инвертирование
+" zf - см :set foldmethod=manual
+" :set foldenable - включить сворачивание
+" :set foldmethod=syntax - сворачивание на основе синтаксиса
+" :set foldmethod=indent - сворачивание на основе отступов
+" :set foldmethod=manual - выделяем участок с помощью v и говорим zf
+" :set foldmethod=marker - сворачивание на основе маркеров в тексте
+" :set foldmarker=bigin,end - задаем маркеры начала и конца блока
+set foldmethod=syntax
+
+
+" Enable highlighting by YCM
+let g:ycm_enable_semantic_highlighting=1
+
+
+highlight CppParameter        cterm=bold ctermfg=15
+highlight CppFunction         cterm=bold ctermfg=39
+highlight CppProperty         cterm=bold ctermfg=51
+"highlight CppPropertyPrivate  cterm=italic ctermfg=51
+
+call prop_type_add( 'YCM_HL_parameter',         { 'highlight': 'CppParameter' } )
+call prop_type_add( 'YCM_HL_function',          { 'highlight': 'CppFunction' } )
+call prop_type_add( 'YCM_HL_method',            { 'highlight': 'CppFunction' } )
+call prop_type_add( 'YCM_HL_property',          { 'highlight': 'CppProperty' } )
+"call prop_type_add( 'YCM_HL_private_property',  { 'highlight': 'CppPropertyPrivate' } )
