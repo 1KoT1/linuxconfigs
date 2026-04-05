@@ -11,8 +11,8 @@
 
 include /etc/sway/config.d/*
 
-# Hide the mouse cursor when typing on a keyboard. Show the mouse cursor when move a mouse.
-#TODO: exec --no-startup-id xbanish
+# Hide mouse cursor after a period of inactivity.
+seat seat0 hide_cursor 2000
 
 set $mod Mod4
 #set $sup Mod4
