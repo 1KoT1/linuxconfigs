@@ -85,6 +85,7 @@ call plug#begin()
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --all' }
 	Plug 'skywind3000/asyncrun.vim'
 	Plug 'will133/vim-dirdiff'
+	Plug 'https://git.sr.ht/~jcc/vim-sway-nav'
 call plug#end()
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
