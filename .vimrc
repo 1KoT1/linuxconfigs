@@ -9,9 +9,14 @@ set hlsearch
 
 set incsearch
 
+let mapleader = ","
+
 if has("syntax")
   syntax on
 endif
+
+" Всегда показывать строку состояния
+let laststatus = 2
 
 " Схема цветов для vimdiff
 "   Префикс ctrem для консоли, префикс gui для графики
@@ -27,10 +32,11 @@ endif
 "   DiffText - the exact part of the line that changed
 "   Выбрать цвета для кронсоли: https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim?file=Xterm-color-table.png
 "   Для gui обычная RGB нотация, к примеру #ff8080
-highlight DiffAdd     cterm=bold ctermbg=43
-highlight DiffChange  cterm=bold ctermbg=43
-highlight DiffDelete  cterm=bold ctermbg=43
-"highlight DiffText    cterm=bold ctermbg=43
+highlight DiffAdd     ctermbg=22
+highlight DiffChange  ctermbg=22
+highlight DiffDelete  ctermbg=22
+highlight clear DiffText
+highlight DiffText    ctermbg=52
 
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -51,6 +57,7 @@ autocmd filetype c,cpp set cinoptions=>s,:0,l1,g0,(0,Ws
 autocmd filetype c,cpp vmap cc :norm i//<CR>
 autocmd filetype c,cpp vmap uc :norm d2l<CR>
 
+nmap ,f :AsyncRun git grep -n 
 
 
 
@@ -75,10 +82,16 @@ call plug#begin()
 
 	Plug 'jasonccox/vim-wayland-clipboard'
 	
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --all' }
+	Plug 'skywind3000/asyncrun.vim'
+	Plug 'will133/vim-dirdiff'
 call plug#end()
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=ru_yo,en_us
+autocmd BufRead,BufNewFile *.cpp setlocal spell spelllang=ru_yo,en_us
+autocmd BufRead,BufNewFile *.h setlocal spell spelllang=ru_yo,en_us
+autocmd BufRead,BufNewFile CMakeLists.txt setlocal spell!
 autocmd FileType gitcommit setlocal spell spelllang=ru_yo,en_us
 " Вкл/выкл проверку орфографии:
 " :set spell/spell!
@@ -92,10 +105,84 @@ autocmd FileType gitcommit setlocal spell spelllang=ru_yo,en_us
 " zg - Добавить в словарь;
 " zw - Убрать из словаря;
 " zG - Игнорировать слово;
+command SP set spell spelllang=ru_yo,en_us
+
+" Включаю поддержку волнистого подчёркивания (undercurl)
+let &t_Cs = "\e[4:3m"
+
+highlight clear SpellBad
+highlight SpellBad term=reverse cterm=undercurl ctermul=Red gui=undercurl guisp=Red
+highlight clear SpellCap
+highlight SpellCap term=reverse cterm=undercurl ctermul=Blue gui=undercurl guisp=Blue
+highlight clear SpellRare
+highlight SpellRare term=reverse cterm=undercurl ctermul=Magenta gui=undercurl guisp=Magenta
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=undercurl ctermul=Cyan gui=undercurl guisp=Cyan
+
+
+
+
 
 
 " Включаю удобную переключалку раскладки клавиатуры.
 let g:XkbSwitchEnabled = 1
+
+
+autocmd filetype python map <F2> :YcmCompleter GoTo<CR>
+autocmd filetype python nmap <leader>D <plug>(YCMHover)
+
+" Auto close annoying windows on complete
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Режим автодополнения команд
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum
+
+" В терминале режим команд по F1
+set termwinkey=<F1>
+" Размер истории терминала в строках
+set termwinscroll=100000
+
+
+
+
+" Очистить историю терминала путем его переоткрытия
+def g:Reopen_term()
+	new
+	call term_sendkeys(0, "exit\n")
+	terminal
+	only!
+enddef
+tmap <c-k> <c-F1>:call g:Reopen_term()<CR>
+
+def g:Tapi_lcd(_, path: string)
+	if isdirectory(path)
+		execute 'silent lcd ' .. fnameescape(path)
+	endif
+enddef
+
+" Отключаю перенос строк в терминале
+au TerminalWinOpen * setlocal nowrap
+
+
+
+
+
+" automatically open quickfix window when AsyncRun command is executed
+" set the quickfix window 20 lines height.
+let g:asyncrun_open = 20
+
+" Открывать новые окна при комаде split и vsplit внизу и справа.
+set splitbelow
+set splitright
+
+" Копировать сразу в системный буфер
+set clipboard=unnamedplus
+
+
+" Предпросмотр для markdown (*.md)
+autocmd FileType markdown command -buffer Preview vertical terminal ++close ++kill=term bash -c "echo % | entr -cs 'glow %'"
 
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
