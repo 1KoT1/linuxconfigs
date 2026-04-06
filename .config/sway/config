@@ -40,7 +40,7 @@ set $opacity A0
 client.unfocused $completely_transparent $completely_transparent $completely_transparent
 client.focused #3333BB$opacity #3333BB$opacity #FFFFFF
 client.focused_inactive $completely_transparent $completely_transparent $completely_transparent
-hide_edge_borders --i3 both
+hide_edge_borders --i3 smart
 
 
 
