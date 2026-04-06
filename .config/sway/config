@@ -87,7 +87,7 @@ bindsym --to-code $mod+d exec --no-startup-id fuzzel
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Same hotkeys for navigate at sway and at vim
-set $vim_sway_nav ~/.vim/plugged/vim-sway-nav/vim-sway-nav
+set $vim_sway_nav ~/.config/vim/plugged/vim-sway-nav/vim-sway-nav
 set $focus_left exec $vim_sway_nav left
 set $focus_down exec $vim_sway_nav down
 set $focus_up exec $vim_sway_nav up
