@@ -11,6 +11,12 @@
 
 include /etc/sway/config.d/*
 
+#input type:keyboard {
+#    xkb_layout us,ru
+#    xkb_options "grp:alt_shift_toggle"
+#}
+input type:keyboard xkb_file ~/.config/xkb/config
+
 # Hide mouse cursor after a period of inactivity.
 seat seat0 hide_cursor 2000
 
@@ -63,17 +69,17 @@ focus_follows_mouse no
 bindsym $mod+Return exec alacritty
 
 # Applications hotkeys.
-bindsym $mod+Ctrl+b exec --no-startup-id chromium
-bindsym $mod+Ctrl+k exec --no-startup-id keepassxc
+bindsym --to-code $mod+Ctrl+b exec --no-startup-id chromium
+bindsym --to-code $mod+Ctrl+k exec --no-startup-id keepassxc
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym --to-code $mod+Shift+q kill
 
 # doesn't warp the mouse cursor to the window's center when change a focus to this windows
 mouse_warping none
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id fuzzel
+bindsym --to-code $mod+d exec --no-startup-id fuzzel
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -81,10 +87,10 @@ bindsym $mod+d exec --no-startup-id fuzzel
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --to-code $mod+h focus left
+bindsym --to-code $mod+j focus down
+bindsym --to-code $mod+k focus up
+bindsym --to-code $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -93,10 +99,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym --to-code $mod+Shift+h move left
+bindsym --to-code $mod+Shift+j move down
+bindsym --to-code $mod+Shift+k move up
+bindsym --to-code $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -105,18 +111,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym --to-code $mod+g split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym --to-code $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym --to-code $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym --to-code $mod+s layout stacking
+bindsym --to-code $mod+w layout tabbed
+bindsym --to-code $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -125,10 +131,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym --to-code $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym --to-code $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -184,12 +190,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #assign [class="Firefox" title="^Development\\ ·\\ Boards\\ ·\\ EZTV\\ \\/\\ EP_packages\\ ·\\ GitLab\\ \\—\\ Mozilla\\ Firefox$"] $ws2
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym --to-code $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym --to-code $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session. Press $mod+Shift+x' -B 'Yes, exit i3' 'swaymsg exit'"
-bindsym $mod+Shift+x exit
+bindsym --to-code $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session. Press $mod+Shift+x' -B 'Yes, exit i3' 'swaymsg exit'"
+bindsym --to-code $mod+Shift+x exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -199,14 +205,14 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 1 px
-        bindsym j resize grow height 1 px
-        bindsym k resize shrink height 1 px
-        bindsym l resize grow width 1 px
-        bindsym Shift+h resize shrink width 10 px
-        bindsym Shift+j resize grow height 10 px
-        bindsym Shift+k resize shrink height 10 px
-        bindsym Shift+l resize grow width 10 px
+        bindsym --to-code h resize shrink width 1 px
+        bindsym --to-code j resize grow height 1 px
+        bindsym --to-code k resize shrink height 1 px
+        bindsym --to-code l resize grow width 1 px
+        bindsym --to-code Shift+h resize shrink width 10 px
+        bindsym --to-code Shift+j resize grow height 10 px
+        bindsym --to-code Shift+k resize shrink height 10 px
+        bindsym --to-code Shift+l resize grow width 10 px
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 1 px
@@ -221,10 +227,10 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym --to-code $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym --to-code $mod+r mode "resize"
 
 bar {
     swaybar_command swaybar
@@ -242,9 +248,3 @@ bar {
         background $completely_transparent
     }
 }
-
-#input type:keyboard {
-#    xkb_layout us,ru
-#    xkb_options "grp:alt_shift_toggle"
-#}
-input type:keyboard xkb_file ~/.config/xkb/config
