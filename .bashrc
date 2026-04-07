@@ -8,6 +8,8 @@ case $- in
       *) return;;
 esac
 
+export PATH="$HOME/.local/bin:$PATH"
+
 umask 0022
 
 # don't put duplicate lines or lines starting with space in the history.
