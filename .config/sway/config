@@ -52,7 +52,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 for_window [app_id="pavucontrol-qt"] floating enable
-exec .config/i3blocks/sripts/update-sound-wigets.sh
+exec .config/i3blocks/scripts/update-sound-wigets.sh
 
 # Set the wallpapper
 output "*" bg /home/vasilii/Изображения/wallpapper.jpg fill
