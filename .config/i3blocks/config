@@ -63,9 +63,9 @@ command=swaymsg -q "exec alacritty --class network-manager-config --option windo
 
 # Date Time
 #
-[time]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+[clock]
+command=/home/vasilii/.config/i3blocks/scripts/clock.sh -f "+%d.%m.%Y %H:%M:%S"
+interval=1
 
 # Generic media player support
 #

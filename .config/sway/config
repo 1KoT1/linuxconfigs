@@ -46,6 +46,12 @@ hide_edge_borders --i3 smart
 
 for_window [app_id="network-manager-config"] floating enable
 
+# 2560 - 984
+set $callendar-applet-x 1576
+# 1440 - 607
+set $callendar-applet-y 833
+for_window [app_id="callendar-applet"] floating enable, move position $callendar-applet-x $callendar-applet-y
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
