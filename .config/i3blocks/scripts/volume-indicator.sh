@@ -4,7 +4,8 @@
 case "$BLOCK_BUTTON" in
   1|2|3) 
 
-  swaymsg -q "exec pavucontrol-qt --tab 3"
+  # flock for exclude run config util twice
+  swaymsg -q "exec flock --nonblock /tmp/volume-config-applet.lock pavucontrol-qt --tab 3"
 esac
 
 # mute indicator
