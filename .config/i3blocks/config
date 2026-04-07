@@ -40,7 +40,7 @@ signal=1
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
-color=#00FF00
+command=~/.config/i3blocks/scripts/network.sh
 interval=10
 separator=false
 
@@ -48,10 +48,6 @@ separator=false
 #instance=wlp3s0
 interval=10
 separator=false
-
-[network-manager-config]
-full_text=↑
-command=swaymsg -q "exec alacritty --class network-manager-config --option window.dimensions.columns=120 --option window.dimensions.lines=30 --command nmtui"
 
 #[bandwidth]
 ##instance=eth0
