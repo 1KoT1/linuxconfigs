@@ -34,10 +34,6 @@ command=/home/vasilii/.config/i3blocks/scripts/volume-indicator.sh
 interval=once
 signal=1
 
-[volume-config]
-full_text=↑
-command=swaymsg -q exec pavucontrol-qt
-
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.

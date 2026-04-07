@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# open config
+case "$BLOCK_BUTTON" in
+  1|2|3) 
+
+  swaymsg -q exec pavucontrol-qt
+esac
+
 # mute indicator
 printf "`pactl get-sink-mute @DEFAULT_SINK@ | sed -e 's\Mute: да\🔇\' -e 's\Mute: нет\🔊\'` "
 
