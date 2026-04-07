@@ -4,7 +4,7 @@
 case "$BLOCK_BUTTON" in
   1|2|3) 
 
-  swaymsg -q exec pavucontrol-qt
+  swaymsg -q "exec pavucontrol-qt --tab 3"
 esac
 
 # mute indicator
