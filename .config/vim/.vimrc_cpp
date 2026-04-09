@@ -2,16 +2,6 @@
 set tabstop=2
 set shiftwidth=2
 
-call plug#begin()
-	Plug 'ilyachur/cmake4vim'
-	" Plug 'https://github.com/cdelledonne/vim-cmake.git'
-	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --all' }
-	Plug 'puremourning/vimspector'
-	Plug 'tpope/vim-dispatch'
-	Plug 'skywind3000/asyncrun.vim'
-	Plug 'will133/vim-dirdiff'
-call plug#end()
-
 " Включаю создание файл compile_commands.json с помощью cmake вызванного из
 " плагина cmake4vim
 let g:cmake_compile_commands = 1
