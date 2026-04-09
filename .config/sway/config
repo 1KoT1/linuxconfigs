@@ -245,6 +245,9 @@ mode "resize" {
 
 bindsym --to-code $mod+r mode "resize"
 
+bindsym --to-code Print exec xfce4-screenshooter --fullscreen
+bindsym --to-code Control+Print exec xfce4-screenshooter
+
 bar {
     swaybar_command swaybar
     # Use swayrbar as status command with some logging output which
