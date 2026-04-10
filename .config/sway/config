@@ -264,3 +264,6 @@ bar {
         background $completely_transparent
     }
 }
+
+# Autostart
+exec yandex-disk start
