@@ -127,4 +127,4 @@ alias gl='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --gra
 alias glog='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph'
 alias gdt='git difftool -y && git status'
 
-alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
+alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autopurge -y'
