@@ -82,7 +82,7 @@ call plug#begin()
 
 	Plug 'jasonccox/vim-wayland-clipboard'
 	Plug 'ilyachur/cmake4vim'
-	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --all' }
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python install.py --clangd-completer' }
 	Plug 'puremourning/vimspector'
 	Plug 'tpope/vim-dispatch'
 	Plug 'skywind3000/asyncrun.vim'
