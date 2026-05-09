@@ -88,7 +88,17 @@ call plug#begin()
 	Plug 'skywind3000/asyncrun.vim'
 	Plug 'will133/vim-dirdiff'
 	Plug 'https://git.sr.ht/~jcc/vim-sway-nav'
+
+	"Snippets engine
+	Plug 'SirVer/ultisnips'
+	"Collection of snippets
+	Plug 'honza/vim-snippets'
 call plug#end()
+
+" Configure the snippets engine
+let g:UltiSnipsExpandTrigger = "<c-u>"
+let g:UltiSnipsListSnippets = "<c-l>"
+
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=ru_yo,en_us
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=ru_yo,en_us
