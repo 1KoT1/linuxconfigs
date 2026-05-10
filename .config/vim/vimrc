@@ -93,6 +93,9 @@ call plug#begin()
 	Plug 'SirVer/ultisnips'
 	"Collection of snippets
 	Plug 'honza/vim-snippets'
+
+	"Ради эксперимента пробую старенький набор инстроментов для C++
+	Plug 'maurges/vim-cpp-helper'
 call plug#end()
 
 " Configure the snippets engine
