@@ -16,3 +16,26 @@ namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`} {
 	${VISUAL}$0
 }${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
 endsnippet
+
+
+##############################
+# GTest
+##############################
+
+snippet TEST "individual GTest named TestName in the test suite TestSuiteName"
+TEST(${1:TestSuiteName}, ${2:TestName}) {
+	$0
+}
+endsnippet
+
+snippet TEST_F "GTest named TestName that uses the test fixture class TestFixtureName"
+TEST_F(${1:TestFixtureName}, ${2:TestName}) {
+	$0
+}
+endsnippet
+
+snippet TEST_P "value-parameterized GTest named TestName that uses the test fixture class TestFixtureName"
+TEST_P(${1:TestFixtureName}, ${2:TestName}) {
+	$0
+}
+endsnippet
