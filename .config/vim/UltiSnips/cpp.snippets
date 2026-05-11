@@ -39,3 +39,25 @@ TEST_P(${1:TestFixtureName}, ${2:TestName}) {
 	$0
 }
 endsnippet
+
+
+
+
+snippet TEST_PARAMETERIZED_INIT "init all for parameterized GTest"
+struct ${1:TestSuiteName}Params {
+	${2:Parameters}
+};
+
+class $1 : public testing::TestWithParam<$1Params>{};
+
+TEST_P($1, Success) {
+	$0
+}
+
+INSTANTIATE_TEST_SUITE_P(${3:ParametersCollectionName},
+                         $1,
+                         testing::Values($1Params{},
+                                         $1Params{},
+                                         $1Params{}
+                                        ));
+endsnippet
