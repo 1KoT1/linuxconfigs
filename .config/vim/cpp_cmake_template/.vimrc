@@ -18,3 +18,8 @@ let g:cmake_vimspector_default_configuration = {
 			\     ]
 			\   }
 			\ }
+
+command Build {
+	wa
+	CMakeBuild
+}
