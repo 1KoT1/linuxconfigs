@@ -17,6 +17,27 @@ namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`} {
 }${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
 endsnippet
 
+snippet cla "An entire .h generator" b
+#ifndef ${1:`!v substitute(substitute(substitute(expand('%:.'), '^.*include/', '', ''), '[/.]', '_', 'g'),'.*','\U&\E','')`}
+#define $1
+
+`!v join(map(split(substitute(expand('%:h'), '^.*include/', '', ''), '/'), '"namespace " . v:val . " {"'), "\n")`
+
+class ${2:`!v substitute(substitute(expand('%:t:r'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`} {
+private:
+	$0
+
+public:
+	$2();
+	virtual ~$2();
+};
+
+`!v join(map(reverse(split(substitute(expand('%:h'), '^.*include/', '', ''), '/')), '"}  // namespace " . v:val'), "\n")`
+
+
+#endif   // $1
+endsnippet
+
 
 ##############################
 # GTest
