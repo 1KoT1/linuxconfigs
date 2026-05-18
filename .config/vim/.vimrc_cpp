@@ -69,6 +69,8 @@ nmap <leader>D <plug>(YCMHover)
 " :set foldmethod=marker - сворачивание на основе маркеров в тексте
 " :set foldmarker=bigin,end - задаем маркеры начала и конца блока
 set foldmethod=syntax
+" Открыть все блоки по умолчанию
+set foldlevelstart=100
 
 
 " Enable highlighting by YCM
