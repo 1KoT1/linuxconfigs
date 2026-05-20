@@ -87,7 +87,7 @@ call plug#begin()
 	Plug 'tpope/vim-dispatch'
 	Plug 'skywind3000/asyncrun.vim'
 	Plug 'will133/vim-dirdiff'
-	Plug 'https://git.sr.ht/~jcc/vim-sway-nav'
+	"Plug 'https://git.sr.ht/~jcc/vim-sway-nav'
 
 	"Snippets engine
 	Plug 'SirVer/ultisnips'

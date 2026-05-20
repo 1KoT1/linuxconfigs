@@ -92,12 +92,10 @@ bindsym --to-code $mod+d exec --no-startup-id fuzzel
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# Same hotkeys for navigate at sway and at vim
-set $vim_sway_nav ~/.config/vim/plugged/vim-sway-nav/vim-sway-nav
-set $focus_left exec $vim_sway_nav left
-set $focus_down exec $vim_sway_nav down
-set $focus_up exec $vim_sway_nav up
-set $focus_right exec $vim_sway_nav right
+set $focus_left focus left
+set $focus_down focus down
+set $focus_up focus up
+set $focus_right focus right
 
 # change focus
 bindsym --to-code $mod+h $focus_left
