@@ -34,8 +34,10 @@
 			"default": ["", ""]
 		},
 		"scroll-step": 1,
-		"on-click": "exec flock --nonblock /tmp/volume-config-applet.lock pavucontrol-qt --tab 3",
-		"ignored-sinks": ["Easy Effects Sink"]
+		"on-click": "~/.config/waybar/scripts/change-audio-sink.sh",
+		"on-click-right": "flock --nonblock /tmp/volume-config-applet.lock pavucontrol-qt --tab 3 || kill `fuser /tmp/volume-config-applet.lock`",
+		"ignored-sinks": ["Easy Effects Sink"],
+		"tooltip": false
 	},
 	"network": {
 		"format": "{ifname}",
