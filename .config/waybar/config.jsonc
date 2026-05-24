@@ -1,0 +1,61 @@
+{
+	"layer": "top",
+	"position": "bottom",
+	"height": 40,
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-center": [],
+	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "clock"],
+	"sway/window": {
+		"max-length": 50
+	},
+	"tray": {
+		"icon-size": 30,
+		"spacing": 10,
+		"reverse-direction": true
+	},
+	"privacy": {
+		"modules": [
+			{
+				"type": "screenshare",
+				"icon-name": "screen-share-symbolic"
+			},{
+				"type": "audio-in",
+				"icon-name": "microphone-sensitivity-high-symbolic"
+			}
+		]
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"alsa_output.usb-Sony_INZONE_H9___INZONE_H7-00.HiFi__Headset__sink": "",
+			"alsa_output.usb-Sony_INZONE_H9___INZONE_H7-00.HiFi__Headphones__sink": "🎮",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "exec flock --nonblock /tmp/volume-config-applet.lock pavucontrol-qt --tab 3",
+		"ignored-sinks": ["Easy Effects Sink"]
+	},
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-ethernet": "🖧",
+		"format-disconnected": "🖧", //An empty format will hide the module.
+		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50,
+		"tooltip": false,
+		"on-click": "~/.config/waybar/scripts/network-show.sh",
+		"on-click-right": "~/.config/waybar/scripts/network.sh"
+	},
+	"sway/language": {
+		"tooltip": false
+	},
+	"clock": {
+		"tooltip": false,
+		"on-click": "~/.config/waybar/scripts/calendar-applet.sh"
+	}
+}
