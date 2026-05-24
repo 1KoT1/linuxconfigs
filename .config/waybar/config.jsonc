@@ -27,7 +27,7 @@
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
 		"format-bluetooth": "{volume}% {icon}",
-		"format-muted": "",
+		/* Doesn't set a "format-muted" but change collor in css */
 		"format-icons": {
 			"alsa_output.usb-Sony_INZONE_H9___INZONE_H7-00.HiFi__Headset__sink": "",
 			"alsa_output.usb-Sony_INZONE_H9___INZONE_H7-00.HiFi__Headphones__sink": "🎮",
