@@ -284,6 +284,14 @@ label:focus {
     min-width: 16px;
 }
 
+#custom-switch-user {
+    background-color: rgba(138, 43, 226, 0.5);
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
 #keyboard-state {
     background: #97e1ad;
     color: #000000;

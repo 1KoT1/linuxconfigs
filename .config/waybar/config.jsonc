@@ -2,9 +2,14 @@
 	"layer": "top",
 	"position": "bottom",
 	"height": 40,
-	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-left": ["custom/switch-user", "sway/workspaces", "sway/mode"],
 	"modules-center": [],
 	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "clock"],
+	"custom/switch-user": {
+		"format": "☀",
+		"tooltip-format": "Сменить пользователя",
+		"on-click": "qdbus6 --system org.freedesktop.DisplayManager /org/freedesktop/DisplayManager/Seat0 org.freedesktop.DisplayManager.Seat.SwitchToGreeter"
+	},
 	"sway/window": {
 		"max-length": 50
 	},
