@@ -9,7 +9,7 @@
 		"max-length": 50
 	},
 	"tray": {
-		"icon-size": 30,
+		"icon-size": 38,
 		"spacing": 10,
 		"reverse-direction": true
 	},
