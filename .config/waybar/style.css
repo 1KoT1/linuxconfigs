@@ -277,8 +277,8 @@ label:focus {
 }
 
 #language {
-    background-color: rgba(0, 176, 147, 0.5);
-    color: #740864;
+    background-color: rgba(0, 255, 201, 0.5);
+    color: black;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
