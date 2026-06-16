@@ -128,3 +128,7 @@ alias glog='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --g
 alias gdt='git difftool -y && git status'
 
 alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt autopurge -y'
+
+
+export DOCKER_HOST_PATH=/run/user/$(id -u)/docker.sock
+export DOCKER_HOST="unix://$DOCKER_HOST_PATH"
