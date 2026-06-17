@@ -114,7 +114,13 @@ button:hover {
 }
 
 #clock {
-		background-color: rgba(100, 114, 125, 0.5)
+		background-color: rgba(100, 114, 125, 0.5);
+		padding-top: 10px;
+}
+
+#fullclock > widget > .date {
+		font-size: 16px;
+		padding: 0px 0px 0px 0px;
 }
 
 #battery {

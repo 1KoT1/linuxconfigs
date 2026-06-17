@@ -4,7 +4,7 @@
 	"height": 40,
 	"modules-left": ["custom/switch-user", "sway/workspaces", "sway/mode"],
 	"modules-center": [],
-	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "clock"],
+	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock"],
 	"custom/switch-user": {
 		"format": "☀",
 		"tooltip-format": "Сменить пользователя",
@@ -61,8 +61,20 @@
 	"sway/language": {
 		"tooltip": false
 	},
+	"group/fullclock": {
+		"orientation": "vertical",
+		"modules": [
+			"clock",
+			"clock#date"
+		]
+	},
 	"clock": {
 		"tooltip": false,
+		"on-click": "~/.config/waybar/scripts/calendar-applet.sh"
+	},
+	"clock#date": {
+		"tooltip": false,
+		"format": "{:%d.%m.%Y}",
 		"on-click": "~/.config/waybar/scripts/calendar-applet.sh"
 	}
 }
