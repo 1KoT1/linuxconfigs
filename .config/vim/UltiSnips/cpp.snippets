@@ -69,10 +69,17 @@ snippet TEST_PARAMETERIZED_INIT "init all for parameterized GTest"
 struct ${1:TestSuiteName}Params {
 	${2:Parameters}
 };
+void PrintTo(const $1Params &v, ostream *s) {
+	*s << "{" << endl
+		 << "  : " << endl
+	$2
+		 << "}";
+}
 
 class $1 : public testing::TestWithParam<$1Params>{};
 
 TEST_P($1, Success) {
+	const auto& arg = GetParam();
 	$0
 }
 
