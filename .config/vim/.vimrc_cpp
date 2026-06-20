@@ -87,3 +87,6 @@ call prop_type_add( 'YCM_HL_function',          { 'highlight': 'CppFunction' } )
 call prop_type_add( 'YCM_HL_method',            { 'highlight': 'CppFunction' } )
 call prop_type_add( 'YCM_HL_property',          { 'highlight': 'CppProperty' } )
 "call prop_type_add( 'YCM_HL_private_property',  { 'highlight': 'CppPropertyPrivate' } )
+
+" Поправляю filetype, чтобы пустые заголовосникки распознавались как C++, а не C
+autocmd BufNewFile,BufRead *.h,*.hpp set filetype=cpp
