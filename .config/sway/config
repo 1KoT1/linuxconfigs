@@ -255,3 +255,4 @@ bar {
 # Autostart
 exec yandex-disk start
 exec steam -silent
+exec kdeconnect-indicator
