@@ -292,7 +292,7 @@ label:focus {
 
 #custom-switch-user {
     background-color: rgba(138, 43, 226, 0.5);
-    color: #740864;
+    font-family: "Noto Emoji";
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
