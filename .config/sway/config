@@ -252,7 +252,14 @@ bar {
     # Configuration at ~/.config/waybar/
 }
 
+
+
+
 # Autostart
+
+# Чтобы работал диалог пароля для sudo по запросу через bdus
+exec systemctl --user status plasma-polkit-agent.service
+
 exec yandex-disk start
 exec steam -silent
 exec kdeconnect-indicator
