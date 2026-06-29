@@ -99,7 +99,14 @@ call plug#begin()
 
 	"Ради эксперимента пробую старенький набор инстроментов для C++
 	Plug 'maurges/vim-cpp-helper'
+
+	Plug 'voldikss/vim-translator'
 call plug#end()
+
+let g:translator_target_lang = 'ru'
+" Display translation in a window
+nmap <silent> <Leader>t <Plug>TranslateW
+vmap <silent> <Leader>t <Plug>TranslateWV
 
 " Configure the snippets engine
 let g:UltiSnipsExpandTrigger = "<c-u>"
