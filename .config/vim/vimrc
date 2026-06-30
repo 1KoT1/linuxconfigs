@@ -101,6 +101,7 @@ call plug#begin()
 	Plug 'maurges/vim-cpp-helper'
 
 	Plug 'voldikss/vim-translator'
+	Plug '1KoT1/go_to_file'
 call plug#end()
 
 let g:translator_target_lang = 'ru'
@@ -213,6 +214,7 @@ autocmd FileType markdown command! -buffer Preview vertical terminal ++close ++k
 
 nnoremap <leader>c :CppToolsCreateClass<CR>
 
+nnoremap <leader>gf :GoToFile<CR>
 
 " Подключать .vimrc и каталога в которм запущен vim.
 " secure для защиты, т.к. vim будет подключать .vimrc из любой директории, из
