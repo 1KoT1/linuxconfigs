@@ -139,6 +139,14 @@ require("lazy").setup(
 	{
 		'skywind3000/asyncrun.vim',
 		'voldikss/vim-translator',
+		{
+			'Civitasv/cmake-tools.nvim',
+			opts = {
+				cmake_build_directory = "../build/${variant:buildType}"
+			},
+			lazy = true,
+			dependencies = { 'nvim-lua/plenary.nvim' }
+		}
 		-- '1KoT1/go_to_file',
 	}, {
 		performance = {
