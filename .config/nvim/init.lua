@@ -146,6 +146,9 @@ require("lazy").setup(
 				reset = false, -- Запрещаем lazy.nvim ломать системные пути Ubuntu
 			},
 		},
+		ui = {
+			border = "rounded",
+		},
 	}
 )
 
