@@ -41,6 +41,9 @@ vim.opt.keymap = "russian-jcukenwin"
 opt.exrc = true
 opt.secure = true
 
+-- Автодполнение команд
+opt.wildmode='longest:full,full'
+
 vim.keymap.set('n', '<Leader>f', ':AsyncRun git grep -n ', { desc = 'Find by git grep' })
 
 -- =============================================================================
@@ -78,6 +81,9 @@ hi(0, 'SpellCap', { undercurl = true, sp = 'Blue' })
 hi(0, 'SpellRare', { undercurl = true, sp = 'Magenta' })
 hi(0, 'SpellLocal', { undercurl = true, sp = 'Cyan' })
 
+-- Автодполнение команд
+vim.api.nvim_set_hl(0, "Pmenu", { bg = 'none' })
+vim.api.nvim_set_hl(0, "PmenuSel", { fg = '#96f3ff', bold = true })
 
 
 
