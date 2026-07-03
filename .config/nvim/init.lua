@@ -54,8 +54,8 @@ vim.keymap.set('n', '<Leader>f', ':AsyncRun git grep -n ', { desc = 'Find by git
 -- 🛠  Автодополнение
 -- =============================================================================
 opt.autocomplete = true
--- o (Omni-completion / LSP), . (Текущий буфер), w (Другие окна), b (Другие буферы), u (Выгруженные буферы)
-opt.complete = "o,.,w,b,u"
+-- o (Omni-completion / LSP), . (Текущий буфер), w (Другие окна), b (Другие буферы), u (Выгруженные буферы), kspell (use the currently active spell checking)
+opt.complete = "o,.,w,b,u,kspell"
 opt.completeopt = "fuzzy,menuone,noselect,popup,nosort"
 
 function get_char_before_cursor()
