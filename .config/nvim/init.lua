@@ -122,6 +122,25 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.lsp.enable('clangd')
 
+local hi = vim.api.nvim_set_hl
+hi(0, 'cppStructure', { fg = '#579401' })
+hi(0, 'cBlock', { fg = '#579401' })
+hi(0, 'cStatement', { fg = '#579401' })
+hi(0, 'cRepeat', { fg = '#579401' })
+hi(0, '@lsp.type.operator.cpp', { fg = '#579401' })
+hi(0, 'cppStatement', { fg = '#579401' })
+hi(0, 'cParen', { fg = '#579401' })
+hi(0, 'cInclude', { fg = '#579401' })
+hi(0, '@lsp.type.function.cpp', { fg = '#5c849e', bold = true })
+hi(0, '@lsp.type.method.cpp', { fg = '#91d3ff', bold = true })
+hi(0, '@lsp.type.property.cpp', { fg = '#91d3ff' })
+hi(0, '@lsp.type.parameter.cpp', { fg = '#fc9c5b' })
+hi(0, '@lsp.type.property.private.cpp', { fg = '#f50202' })
+hi(0, '@lsp.typemod.property.private.cpp', { fg = '#f50202' })
+hi(0, 'cType', { fg = '#85e300' })
+hi(0, '@lsp.type.class.cpp', { fg = '#b7e07b' })
+hi(0, '@lsp.type.variable.cpp', { fg = 'White' })
+
 
 
 -- =============================================================================
