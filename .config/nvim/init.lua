@@ -117,6 +117,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- -- Отступы
 		-- vim.opt_local.cindent = true
 		-- vim.opt_local.cinoptions = ">s,:0,l1,g0,(0,Ws"
+		vim.opt_local.complete = "o"
 
 		vim.keymap.set('n', '<Leader><Leader>', ':lua vim.lsp.buf.', { desc = 'Open C++ tools' })
 		vim.keymap.set('n', '<C-d>', vim.lsp.buf.hover, { desc = 'Open a documentation for a current symbol in a hover window' })
