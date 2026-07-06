@@ -114,9 +114,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "c", "cpp" },
 	group = g,
 	callback = function()
-		-- -- Отступы
-		-- vim.opt_local.cindent = true
-		-- vim.opt_local.cinoptions = ">s,:0,l1,g0,(0,Ws"
 		vim.opt_local.complete = "o"
 
 		-- -- Горячие клавиши
@@ -130,6 +127,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- 
 		vim.keymap.set('n', '<Leader>adc', vim.diagnostic.setloclist, { desc = 'Show all diagnostic for current bufer' })
 		vim.keymap.set('n', '<Leader>ad', vim.diagnostic.setqflist, { desc = 'Show all diagnostic' })
+		vim.keymap.set('n', '=a', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Formate all in file' })
 
 
 
@@ -139,6 +137,18 @@ vim.api.nvim_create_autocmd("FileType", {
 			virtual_text = true,
 			signs = true,
 			update_in_insert = true,
+		})
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = { "*.h", "*.cpp" },
+	group = g,
+	callback = function(args)
+		-- Автоматически форматировать при сохранении файла
+		vim.lsp.buf.format({ 
+			bufnr = args.buf,
+			async = false -- Важно: false, чтобы Neovim успел отформатировать ДО записи на диск
 		})
 	end,
 })
