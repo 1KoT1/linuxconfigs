@@ -268,8 +268,14 @@ require("lazy").setup(
 			},
 			lazy = true,
 			dependencies = { 'nvim-lua/plenary.nvim' }
-		}
+		},
 		-- '1KoT1/go_to_file',
+		{ 'mfussenegger/nvim-dap', lazy = true },
+		{ 
+			'rcarriga/nvim-dap-ui',
+			lazy = true,
+			dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'},
+		},
 	}, {
 		performance = {
 			rtp = {
