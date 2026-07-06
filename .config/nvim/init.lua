@@ -62,34 +62,34 @@ opt.complete = "o,.,w,b,u,kspell"
 opt.completeopt = "fuzzy,menuone,noselect,popup,nosort"
 
 function get_char_before_cursor()
-  local col_before = vim.fn.col('.') - 1
-  local line = vim.fn.getline('.')
-  return line:sub(col_before, col_before)
+	local col_before = vim.fn.col('.') - 1
+	local line = vim.fn.getline('.')
+	return line:sub(col_before, col_before)
 end
 
 -- Перебор вариантов с помощью Tab и Shift+Tab
 vim.keymap.set('i', '<Tab>', function()
-  return vim.fn.pumvisible() == 1 and '<C-n>' or '<Tab>'
+	return vim.fn.pumvisible() == 1 and '<C-n>' or '<Tab>'
 end, { expr = true, remap = true })
 vim.keymap.set('i', '<Tab>', function()
-  -- 1. Если меню автодополнения уже открыто, просто переходим к следующему элементу
-  if vim.fn.pumvisible() == 1 then
-    return '<C-n>'
-  end
+	-- 1. Если меню автодополнения уже открыто, просто переходим к следующему элементу
+	if vim.fn.pumvisible() == 1 then
+		return '<C-n>'
+	end
 
-  -- 2. Если перед курсором символы начала пути: '/', '.', '~' или '\' (для Windows)
-  if get_char_before_cursor():match('[/%..~%\\]') then
-    -- Симулируем нажатие Ctrl+X затем Ctrl+F для вызова встроенного дополнения путей
-    return '<C-x><C-f>'
-  end
+	-- 2. Если перед курсором символы начала пути: '/', '.', '~' или '\' (для Windows)
+	if get_char_before_cursor():match('[/%..~%\\]') then
+		-- Симулируем нажатие Ctrl+X затем Ctrl+F для вызова встроенного дополнения путей
+		return '<C-x><C-f>'
+	end
 
-  -- 3. Если если меню не открыто и перед курсором не начало пути, то возвращаем обычный Tab
+	-- 3. Если если меню не открыто и перед курсором не начало пути, то возвращаем обычный Tab
 	return '<Tab>'
 end, { expr = true, remap = true })
 
 -- В обратную сторону по Shift+Tab
 vim.keymap.set('i', '<S-Tab>', function()
-  return vim.fn.pumvisible() == 1 and '<C-p>' or '<S-Tab>'
+	return vim.fn.pumvisible() == 1 and '<C-p>' or '<S-Tab>'
 end, { expr = true, remap = true })
 
 -- Для автодополнения путей переходим на следующий уровень по нажатию /
@@ -102,7 +102,7 @@ vim.keymap.set('i', '/', function()
 			return '<C-x><C-f>'
 		end
 	end
-  -- Если если меню не открыто, то возвращаем обычный /
+	-- Если если меню не открыто, то возвращаем обычный /
 	return '/'
 end, { expr = true, remap = true })
 
