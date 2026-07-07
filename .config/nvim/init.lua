@@ -189,6 +189,10 @@ local hi = vim.api.nvim_set_hl
 hi(0, "Normal", { bg = "none" })
 hi(0, "NormalFloat", { bg = "none" })
 
+-- Строка статуса
+hi(0, "StatusLine", { bg = "#5f6d8a" })
+hi(0, "StatusLineNC", { bg = "#4f5258" })
+
 -- Диффы (vimdiff)
 hi(0, "DiffAdd", { ctermbg = 22 })
 hi(0, "DiffChange", { ctermbg = 22 })
