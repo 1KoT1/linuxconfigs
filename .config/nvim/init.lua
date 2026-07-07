@@ -206,7 +206,7 @@ hi(0, 'SpellRare', { undercurl = true, sp = 'Magenta' })
 hi(0, 'SpellLocal', { undercurl = true, sp = 'Cyan' })
 
 -- Автодполнение команд
-vim.api.nvim_set_hl(0, "Pmenu", { bg = 'none' })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = '#2c2e33' })
 vim.api.nvim_set_hl(0, "PmenuSel", { fg = '#96f3ff', bold = true })
 
 
