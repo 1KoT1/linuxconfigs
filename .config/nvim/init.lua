@@ -115,6 +115,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = g,
 	callback = function()
 		vim.opt_local.complete = "o"
+		if type(list_snippets_for_completion) == "function" then
+			vim.opt_local.complete:prepend('Fv:lua.list_snippets_for_completion')
+		end
+		vim.opt_local.completeopt = "fuzzy,menuone,noselect,popup"
 
 		-- -- Горячие клавиши
 		vim.keymap.set('n', '<Leader><Leader>', ':lua vim.lsp.buf.', { desc = 'Open C++ tools' })
@@ -276,6 +280,11 @@ require("lazy").setup(
 			lazy = true,
 			dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'},
 		},
+		{
+			'L3MON4D3/LuaSnip',
+			version = 'v2.5.0',
+			lazy = true,
+		}
 	}, {
 		performance = {
 			rtp = {
@@ -330,3 +339,53 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+
+-- =============================================================================
+-- 🛠  Snippets
+-- =============================================================================
+local snip = require('luasnip')
+
+vim.keymap.set('i', '<C-u>', function() snip.expand() end, { silent = true })
+vim.keymap.set({'i', 's'}, '<C-j>', function() snip.jump(1) end, { silent = true })
+vim.keymap.set({'i', 's'}, '<C-k>', function() snip.jump(-1) end, { silent = true })
+vim.keymap.set({'i', 's'}, '<C-E>', function()
+	if snip.choice_active() then
+		snip.change_choice(1)
+	end
+end, {silent = true})
+
+-- Загружаю наборы сниппетов
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { '~/.config/nvim/my-snippets/vscode' } })
+
+vim.api.nvim_create_user_command(
+	'LuaSnipUpdateDocstringdStorage',
+	function()
+		snip.store_snippet_docstrings(snip.get_snippets())
+		snip.load_snippet_docstrings(snip.get_snippets())
+	end,
+	{ desc = 'Dockstrings storage is a index of sippet information. You shoult update it after edit snippets for prevents a somewhat costly computation.' }
+)
+
+-- Добавляю сниппеты в нативное автодополнение
+-- Функцию добавляю в глобальное пространство имён _G, чтобы она была доступна отовсюду
+_G.list_snippets_for_completion = function(findstart, base)
+	if findstart == 1 then
+		-- Нахожу позицию первого символа последнего слова перед курсором
+		local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+		local _, last_pos = vim.api.nvim_get_current_line():sub(1, col):match(".*(%W)()")
+		return last_pos and last_pos - 1 or col
+	else
+		-- Отдаю все сниппеты для текущего типа файла. Фильтрацию по набираемому тексту 
+		-- выполнит нативная часть автодополнения. Там может использоваться нечёткий
+		-- поиск. Вот пусть само и фильтрует.
+		local list_snippets = {}
+		for _, value in ipairs(snip.available()[vim.bo.filetype]) do
+			list_snippets[#list_snippets + 1] = {
+				word = value.trigger,
+				menu = 'Snippet: '..unpack(value.description) -- Text displayed on the right of the menu
+			}
+		end
+		return list_snippets
+	end
+end
+opt.complete:prepend('Fv:lua.list_snippets_for_completion')

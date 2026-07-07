@@ -1,0 +1,72 @@
+{
+	"Starter Template": {
+		"prefix": "st",
+		"body": [
+			"#include <iostream>",
+			"",
+			"int main (int argc, char *argv[]) {",
+			"\t$1",
+			"",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Standard starter template for a tiny C++ program"
+	},
+	"TEST": {
+		"prefix": "TEST",
+		"body": [
+			"TEST(${1:TestSuiteName}, ${2:TestName}) {",
+			"	$0",
+			"}"
+		],
+		"description": "individual GTest named TestName in the test suite TestSuiteName"
+	},
+	"TEST_F": {
+		"prefix": "TEST_F",
+		"body": [
+			"TEST(${1:TestFixtureName}, ${2:TestName}) {",
+			"	$0",
+			"}"
+		],
+		"description": "GTest named TestName that uses the test fixture class TestFixtureName"
+	},
+	"TEST_P": {
+		"prefix": "TEST_P",
+		"body": [
+			"TEST_P(${1:TestFixtureName}, ${2:TestName}) {",
+			"	const auto& arg = GetParam();",
+			"	$0",
+			"}"
+		],
+		"description": "value-parameterized GTest named TestName that uses the test fixture class TestFixtureName"
+	},
+	"TEST_PARAMETERIZED_INIT": {
+		"prefix": "TEST_PARAMETERIZED_INIT",
+		"body": [
+			"struct ${1:TestSuiteName}Params {",
+			"	${2:Parameters}",
+			"};",
+			"void PrintTo(const $1Params &v, ostream *s) {",
+			"	*s << \"{\" << endl",
+			"		 << \"  : \" << endl",
+			"	$2",
+			"		 << \"}\";",
+			"}",
+			"",
+			"class $1 : public testing::TestWithParam<$1Params>{};",
+			"",
+			"TEST_P($1, Success) {",
+			"	const auto& arg = GetParam();",
+			"	$0",
+			"}",
+			"",
+			"INSTANTIATE_TEST_SUITE_P(${3:ParametersCollectionName},",
+			"                         $1,",
+			"                         testing::Values($1Params{},",
+			"                                         $1Params{},",
+			"                                         $1Params{}",
+			"                                        ));"
+		],
+		"description": "init all for parameterized GTest"
+	}
+}
