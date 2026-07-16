@@ -123,6 +123,12 @@ button:hover {
 		padding: 0px 0px 0px 0px;
 }
 
+#custom-moskow-label {
+		background-color: rgba(100, 114, 125, 0.5);
+		font-size: 16px;
+		padding: 0px 0px 0px 0px;
+}
+
 #battery {
     background-color: #ffffff;
     color: #000000;

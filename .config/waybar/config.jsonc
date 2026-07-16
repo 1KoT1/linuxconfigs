@@ -4,7 +4,7 @@
 	"height": 40,
 	"modules-left": ["custom/switch-user", "sway/workspaces", "sway/mode"],
 	"modules-center": [],
-	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock"],
+	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock", "group/clock_moskow"],
 	"custom/switch-user": {
 		"format": "☀",
 		"tooltip-format": "Сменить пользователя",
@@ -76,5 +76,21 @@
 		"tooltip": false,
 		"format": "{:%d.%m.%Y}",
 		"on-click": "~/.config/waybar/scripts/calendar-applet.sh"
+	},
+	"group/clock_moskow": {
+		"orientation": "vertical",
+		"modules": [
+			"clock#moskow",
+			"custom/moskow-label"
+		]
+	},
+	"clock#moskow": {
+		"timezone": "Europe/Moscow",
+		"tooltip": false,
+		"on-click": "~/.config/waybar/scripts/calendar-applet.sh"
+	},
+	"custom/moskow-label": {
+		"format": "Москва",
+		"interval": 0 // Ноль значит текст будет постоянным
 	}
 }
