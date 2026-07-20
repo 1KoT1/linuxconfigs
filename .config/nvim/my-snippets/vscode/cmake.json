@@ -1,0 +1,17 @@
+{
+	"Add package Google Tests": {
+		"prefix": "find_gtests",
+		"body": [
+			"find_package(GTest REQUIRED)",
+			"#Add to target_link_libraries:",
+			"#	GTest::gtest_main",
+			"#	GTest::gtest",
+			"#	GTest::gmock",
+			"#Result Variables:",
+			"#	GTEST_FOUND: True if the framework was found.",
+			"#	GTEST_INCLUDE_DIRS: The directory containing GTest headers.",
+			"#	GTEST_LIBRARIES: Path to the GTest library"
+		],
+		"description": "Standard starter template for a tiny C++ program"
+	}
+}
