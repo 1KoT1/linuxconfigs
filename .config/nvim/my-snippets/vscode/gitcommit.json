@@ -1,0 +1,82 @@
+{
+  "status": {
+    "prefix": "status",
+    "body": "status $1`!p snip.rv = complete(t[1], ['build', 'ci', 'test', 'refactor', 'perf', 'improvement', 'docs', 'chore', 'feat', 'fix', 'style'])`",
+    "description": "Status"
+  },
+  "fix": {
+    "prefix": "fix",
+    "body": "fix(${1:scope}): ${2:title}\n\n$0",
+    "description": "fix conventional commit"
+  },
+  "feat": {
+    "prefix": "feat",
+    "body": "feat(${1:scope}): ${2:title}\n\n$0",
+    "description": "feat conventional commit"
+  },
+  "chore": {
+    "prefix": "chore",
+    "body": "chore(${1:scope}): ${2:title}\n\n$0",
+    "description": "chore conventional commit"
+  },
+  "docs": {
+    "prefix": "docs",
+    "body": "docs(${1:scope}): ${2:title}\n\n$0",
+    "description": "docs conventional commit"
+  },
+  "improvement": {
+    "prefix": "improvement",
+    "body": "improvement(${1:scope}): ${2:title}\n\n$0",
+    "description": "improvement conventional commit"
+  },
+  "perf": {
+    "prefix": "perf",
+    "body": "perf(${1:scope}): ${2:title}\n\n$0",
+    "description": "perf conventional commit"
+  },
+  "refactor": {
+    "prefix": "refactor",
+    "body": "refactor(${1:scope}): ${2:title}\n\n$0",
+    "description": "refactor conventional commit"
+  },
+  "test": {
+    "prefix": "test",
+    "body": "test(${1:scope}): ${2:title}\n\n$0",
+    "description": "test conventional commit"
+  },
+  "ci": {
+    "prefix": "ci",
+    "body": "ci(${1:scope}): ${2:title}\n\n$0",
+    "description": "ci conventional commit"
+  },
+  "build": {
+    "prefix": "build",
+    "body": "build(${1:scope}): ${2:title}\n\n$0",
+    "description": "build conventional commit"
+  },
+  "style": {
+    "prefix": "style",
+    "body": "style(${1:scope}): ${2:title}\n\n$0",
+    "description": "style conventional commit"
+  },
+  "Co-authored-by": {
+    "prefix": "Co-authored-by",
+    "body": "Co-authored-by: ${1:Author Name} <${2:Email}>",
+    "description": "Co-authored-by:"
+  },
+  "sign": {
+    "prefix": "sign",
+    "body": "-------------------------------------------------------------------------------\n${1:Company Name}\n\n${2:Author Name}\n\n${3:Streetname 21}\n${4:City and Area}\n\n${5:Tel: \t\t\t\t\t\t+44 (0)987 / 888 8888}\n${6:Fax: \t\t\t\t\t\t+44 (0)987 / 888 8882}\n${7:Mail: \t\t\t\t\tEmail}\n${8:Web: \t\t\t\t\t\thttps://}\n-------------------------------------------------------------------------------\n$0",
+    "description": "Signature"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "TODO: ${1:What is it} (`date \"+%b %d %Y %a (%H:%M:%S)\"`, `echo $USER`)\n$0",
+    "description": "Todo"
+  },
+  "cmt": {
+    "prefix": "cmt",
+    "body": "${1:Summarize changes in around 50 characters or less}\n\n${2:More detailed explanatory text, if necessary. Wrap it to about 72\ncharacters or so. In some contexts, the first line is treated as the\nsubject of the commit and the rest of the text as the body. The\nblank line separating the summary from the body is critical (unless\nyou omit the body entirely); various tools like `log`, `shortlog`\nand `rebase` can get confused if you run the two together.}\n\n${3:Explain the problem that this commit is solving. Focus on why you\nare making this change as opposed to how (the code explains that).\nAre there side effects or other unintuitive consequences of this\nchange? Here's the place to explain them.}\n\n${4:Further paragraphs come after blank lines.\n\n - Bullet points are okay, too\n\n - Typically a hyphen or asterisk is used for the bullet, preceded\n   by a single space, with blank lines in between, but conventions\n   vary here}\n\n${5:Status}\n\n${6:If you use an issue tracker, put references to them at the bottom,\nlike this.}\n\n${7:Any todos}\n\n${8:Resolves: #123\nSee also: #456, #789}\n\n${9:Signature}",
+    "description": "Commit Structure"
+  }
+}

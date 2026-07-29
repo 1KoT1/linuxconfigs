@@ -12,6 +12,10 @@
 			{
 				"language": "cmake",
 				"path": "./cmake.json"
+			},
+			{
+				"language": "gitcommit",
+				"path": "./gitcommit.json"
 			}
 		]
 	}
