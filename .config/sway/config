@@ -62,7 +62,7 @@ for_window [app_id="pavucontrol-qt"] floating enable
 exec .config/i3blocks/scripts/update-sound-wigets.sh
 
 # Set the wallpapper
-output "*" bg /home/vasilii/Изображения/wallpapper.jpg fill
+output "*" bg /home/vasilii/Изображения/ozero_gory_domik_136973_2560x1440.jpg fill
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
