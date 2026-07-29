@@ -272,7 +272,11 @@ require("lazy").setup(
 		{
 			'Civitasv/cmake-tools.nvim',
 			opts = {
-				cmake_build_directory = "../build/${variant:buildType}"
+				cmake_build_directory = function()
+					local root = vim.fs.root(0, {{ ".git", "CMakeLists.txt", "Makefile", ".clangd" }})
+					local dir_name = root and 'build-'..vim.fs.basename(root) or 'build'
+					return "../"..dir_name.."/${variant:buildType}"
+				end,
 			},
 			lazy = true,
 			dependencies = { 'nvim-lua/plenary.nvim' }
