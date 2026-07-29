@@ -12,6 +12,16 @@
 		],
 		"description": "Standard starter template for a tiny C++ program"
 	},
+	"Empty namspace": {
+		"prefix": "ns",
+		"body": [
+			"namespace ${1:Name} {",
+			"",
+			"$0",
+			"",
+			"}  // namespace $1"
+		]
+	},
 	"TEST": {
 		"prefix": "TEST",
 		"body": [
