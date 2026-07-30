@@ -47,6 +47,21 @@ end or function()
 return ''
 end
 
+local get_build_dir = has_cmake_tools and function()
+	local build_dir = cmake_tools.get_config():prepare_build_directory(nil)
+
+	if
+		build_dir
+		and vim.fn.isdirectory(build_dir) == 1 then
+		return build_dir
+	else
+		return "${workspaceFolder}"
+	end
+end or function()
+return "${workspaceFolder}"
+end
+
+
 -- Конфигурация dap
 dap.configurations.cpp = {
 	{
@@ -55,7 +70,7 @@ dap.configurations.cpp = {
 		request = "launch",
 		program = get_programm,
 		args = get_args,
-		cwd = "${workspaceFolder}",
+		cwd = get_build_dir,
 		stopAtBeginningOfMainSubprogram = false,
 	},
 	{
