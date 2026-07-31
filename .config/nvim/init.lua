@@ -145,7 +145,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.g.cpp_autoformat_on_save = vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = { "*.h", "*.cpp" },
 	group = g,
 	callback = function(args)
