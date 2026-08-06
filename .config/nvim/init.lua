@@ -289,6 +289,14 @@ require("lazy").setup(
 			dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'},
 		},
 		{
+			'nvim-treesitter/nvim-treesitter',
+			lazy = false,
+			build = ':TSUpdate',
+			opts = {
+				ensure_installed = { "cpp" },
+			},
+		},
+		{
 			'L3MON4D3/LuaSnip',
 			version = 'v2.5.0',
 			lazy = true,
