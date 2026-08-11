@@ -2,9 +2,9 @@
 	"layer": "top",
 	"position": "bottom",
 	"height": 40,
-	"modules-left": ["custom/switch-user", "sway/workspaces", "sway/mode"],
+	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": [],
-	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock", "group/clock_moskow"],
+	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock", "group/clock_moskow", "custom/switch-user"],
 	"custom/switch-user": {
 		"format": "☀",
 		"tooltip-format": "Сменить пользователя",
