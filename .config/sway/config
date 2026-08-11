@@ -244,8 +244,8 @@ mode "resize" {
 
 bindsym --to-code $mod+r mode "resize"
 
-bindsym --to-code Print exec xfce4-screenshooter --fullscreen
-bindsym --to-code Control+Print exec xfce4-screenshooter
+bindsym --to-code Print exec flameshot gui
+bindsym --to-code Shift+Print exec flameshot full
 
 bar {
     swaybar_command waybar
