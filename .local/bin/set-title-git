@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dir="$(pwd)"
+project="$(basename "$dir")"
+group="$(basename "$(dirname "$dir")")"
+
+set-title "git $group $project"
