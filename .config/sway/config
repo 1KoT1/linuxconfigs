@@ -81,7 +81,7 @@ focus_follows_mouse no
 bindsym $mod+Return exec alacritty
 
 # Applications hotkeys.
-bindsym --to-code $mod+Ctrl+b exec --no-startup-id chromium
+bindsym --to-code $mod+Ctrl+b exec --no-startup-id firefox
 bindsym --to-code $mod+Ctrl+k exec --no-startup-id keepassxc
 
 # kill focused window
