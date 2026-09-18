@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+WINDOW_ID="$1"
+TRIGGER_KEY="$2"
+STATE_FILE="/run/user/$(id -u)/claude-layout/$WINDOW_ID"
+DELAY="0.15"
+
+[ -f "$STATE_FILE" ] || exit 0
+
+idx=$(cat "$STATE_FILE")
+[ -n "$idx" ] || exit 0
+
+if [ "$TRIGGER_KEY" = "C" ]; then
+    # "c" can start a multi-key chord (cc, c2e, cb, ...) — delay the switch so
+    # a fast chord finishes sending its keys under the old layout first.
+    (sleep "$DELAY"; swaymsg input type:keyboard xkb_switch_layout "$idx" >/dev/null 2>&1) &
+    disown
+else
+    swaymsg input type:keyboard xkb_switch_layout "$idx" >/dev/null 2>&1
+fi

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+WINDOW_ID="$1"
+STATE_FILE="/run/user/$(id -u)/claude-layout/$WINDOW_ID"
+
+swaymsg input type:keyboard xkb_switch_layout next >/dev/null
+
+idx=$(swaymsg -t get_inputs -r | jq '[.[] | select(.type == "keyboard") | .xkb_active_layout_index] | first')
+
+if [ -n "$idx" ] && [ "$idx" != "null" ]; then
+    mkdir -p "$(dirname "$STATE_FILE")"
+    echo "$idx" > "$STATE_FILE"
+fi
