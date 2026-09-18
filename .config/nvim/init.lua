@@ -31,7 +31,17 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 
 -- Системный буфер обмена
-opt.clipboard = "unnamedplus" -- set clipboard=unnamedplus
+-- opt.clipboard = "unnamedplus" -- set clipboard=unnamedplus
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Sync yanked text to system clipboard",
+  callback = function()
+    if vim.v.event.operator == "y" then
+      -- vim.fn.setreg("+", vim.fn.getreg('"'))
+			vim.fn.setreg("+", vim.v.event.regcontents, vim.v.event.regtype)
+    end
+  end,
+})
+
 
 -- Переключать язык в режиме ВСТАВКА независимо от системы. Таким образом я смогу писать
 -- текст на русском, при этом клавиши управления останутся английскими.
