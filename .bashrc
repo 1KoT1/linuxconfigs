@@ -123,6 +123,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export EDITOR=nvim
+
 alias gl='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph --all'
 alias glog='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph'
 alias gdt='git difftool -y && git status'
