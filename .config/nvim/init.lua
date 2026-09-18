@@ -306,6 +306,7 @@ require("lazy").setup(
 				ensure_installed = { "cpp" },
 			},
 		},
+		"1KoT1/go-to-file-at-last-windows.nvim",
 		{
 			'L3MON4D3/LuaSnip',
 			version = 'v2.5.0',
