@@ -332,7 +332,7 @@ vim.g.asyncrun_open = 20
 
 -- Translator
 vim.g.translator_target_lang = 'ru'
-vim.g.translator_default_engines = {'google'}
+vim.g.translator_default_engines = {'trans'}
 -- Display translation in a window
 vim.keymap.set('n', '<Leader>t', '<Plug>TranslateW', { silent = true })
 vim.keymap.set('v', '<Leader>t',  '<Plug>TranslateWV', { silent = true })
