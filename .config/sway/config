@@ -252,6 +252,8 @@ bindsym --to-code $mod+r mode "resize"
 bindsym --to-code Print exec flameshot gui
 bindsym --to-code Shift+Print exec flameshot full
 
+bindsym --to-code $mod+n exec swaync-client -t -sw
+
 bar {
     swaybar_command waybar
     # Configuration at ~/.config/waybar/
@@ -265,6 +267,7 @@ bar {
 # Чтобы работал диалог пароля для sudo по запросу через bdus
 exec systemctl --user status plasma-polkit-agent.service
 
+exec swaync
 exec yandex-disk start
 exec steam -silent
 exec kdeconnect-indicator

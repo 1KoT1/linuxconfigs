@@ -4,7 +4,26 @@
 	"height": 40,
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": [],
-	"modules-right": ["tray", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock", "group/clock_moskow", "custom/switch-user"],
+	"modules-right": ["tray", "custom/swaync", "privacy", "pulseaudio", "network", "sway/language", "group/fullclock", "group/clock_moskow", "custom/switch-user"],
+	"custom/swaync": {
+		"tooltip": true,
+		"exec": "swaync-client -swb",
+		"return-type": "json",
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "",
+			"none": "",
+			"dnd-notification": "",
+			"dnd-none": "",
+			"inhibited-notification": "",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "",
+			"dnd-inhibited-none": ""
+		},
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
 	"custom/switch-user": {
 		"format": "☀",
 		"tooltip-format": "Сменить пользователя",
