@@ -247,10 +247,26 @@ notificationwindow, blankwindow {
   /* Styling only for Grouped Notifications */
   transition: opacity 200ms ease-in-out;
   /* The groups close button */
+  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  border: var(--border);
+  border-radius: var(--border-radius);
+  margin: 6px 0;
 }
 
 .notification-group:focus {
   background: var(--noti-bg-focus);
+}
+
+.notification-group:not(.collapsed) {
+  /* Opaque background when the group is expanded */
+  background: rgba(var(--noti-bg), 1);
+}
+
+.notification-group:not(.collapsed) .notification-row .notification-background .notification {
+  /* Let the group background show through instead of nested per-notification cards */
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .notification-group.low {
