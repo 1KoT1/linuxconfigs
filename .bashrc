@@ -134,3 +134,6 @@ alias обновить='sudo apt update && sudo apt full-upgrade -y && sudo apt 
 
 export DOCKER_HOST_PATH=/run/user/$(id -u)/docker.sock
 export DOCKER_HOST="unix://$DOCKER_HOST_PATH"
+
+# Jira/Confluence MCP tokens (see plan: lazy-yawning-dawn.md)
+[ -f "$HOME/.config/secrets/jira-confluence.env" ] && . "$HOME/.config/secrets/jira-confluence.env"
