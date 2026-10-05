@@ -50,6 +50,10 @@
       "state": "muted",
       "urgency": "Normal",
       "app-name": "example.app.id"
+    },
+    "amnezia-vpn": {
+      "state": "ignored",
+      "app-name": "AmneziaVPN"
     }
   },
   "widgets": [
