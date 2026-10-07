@@ -16,6 +16,8 @@ include /etc/sway/config.d/*
 #    xkb_options "grp:alt_shift_toggle"
 #}
 input type:keyboard xkb_file ~/.config/xkb/config
+# Independent keyboard's layouts per windows
+exec swaykbdd
 
 # Hide mouse cursor after a period of inactivity.
 seat seat0 hide_cursor 2000

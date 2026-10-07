@@ -102,6 +102,8 @@ call plug#begin()
 
 	Plug 'voldikss/vim-translator'
 	Plug '1KoT1/go_to_file'
+
+	Plug '~/src/vim-plugins/cpp_tools'
 call plug#end()
 
 let g:translator_target_lang = 'ru'
