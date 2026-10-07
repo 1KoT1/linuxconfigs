@@ -2,7 +2,7 @@
 WINDOW_ID="$1"
 TRIGGER_KEY="$2"
 STATE_FILE="/run/user/$(id -u)/claude-layout/$WINDOW_ID"
-DELAY="0.15"
+DELAY="0.30"
 
 [ -f "$STATE_FILE" ] || exit 0
 
