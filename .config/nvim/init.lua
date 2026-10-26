@@ -133,7 +133,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 		-- -- Горячие клавиши
 		vim.keymap.set('n', '<Leader><Leader>', ':lua vim.lsp.buf.', { desc = 'Open C++ tools' })
-		vim.keymap.set('n', '<C-d>', vim.lsp.buf.hover, { desc = 'Open a documentation for a current symbol in a hover window' })
+		vim.keymap.set('n', '<Leader>d', vim.lsp.buf.hover, { desc = 'Open a documentation for a current symbol in a hover window' })
 		vim.keymap.set('n', '<F2>', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
 		--
 		-- Переопределяю, чтобы при переходе открывалась подсказка с полным описанием диагностики
