@@ -6,6 +6,7 @@ opacity = 0.9
 
 [keyboard]
 bindings = [
+    { key = "Space", mods = "Shift", chars = "\u001b[32;2u" },
     { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
     { key = "K", mods = "Control", action = "ClearHistory" },
 ]
