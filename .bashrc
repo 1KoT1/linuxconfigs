@@ -123,6 +123,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export CODEX_HOME=/home/vasilii/.config/codex
+
 export EDITOR=nvim
 
 alias gl='git log --pretty="format:%C(auto)%h %Cblue%an %ai %C(auto)%d %s" --graph --all'
